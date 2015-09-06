@@ -28,8 +28,17 @@ Overall the project right now consists of the following parts:
 
  - Login and use bash as usual
  - After setting this up on a new server you can run `get_history` in shell, to load the history from DB
+ - After using this for some time on any number of servers (or just one, local) you can check you history in the DB for that obscure method, that you've executed a number of months ago, that has already disappeared from your history.
 
 ## Issues
 
  - Loading history reads it for all users, no matter which one you're logged as
  - Remote setup not tested yet
+
+## Disclaimer
+
+This is a bit over-engineered for usage on a single server, so if you're mostly concerned with long term storage consider using a much simpler alternative the following:
+
+`HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${HOSTNAME_SHORT}_$$"`
+
+Courtesy of [@michaelhoffman](https://twitter.com/michaelhoffman/status/639178145673932800).
