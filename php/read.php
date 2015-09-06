@@ -1,5 +1,7 @@
 <?php
 
+require_once('db.php');
+
 $query = $db_conn->query("SELECT unix_timestamp(`timestamp`) AS timestamp, `command` FROM `history` ORDER BY `timestamp` ASC");
 
 while ($row = $query->fetch_assoc()) {
