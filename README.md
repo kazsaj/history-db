@@ -19,7 +19,7 @@ It consists of 2 parts
 
  - Create the MySQL database on your central server using `db/schema.sql` and grant your web server appropriate access to that database.
  - Make the `web` directory accessible on a web server with php and php-mysql.
- - Modify 'php/db.php` to include your MySQL connection parameters
+ - Modify `php/db.php` to include your MySQL connection parameters
  - Modify `php/password.php` to include a download password (for `web/download.php`)
  - Include `bash/bashrc-funcs` in your bashrc somehow, either with a `source` statement, or copy+paste, remember to update the password for download.php
  - Create a symlink to one of the `bash/.sh` files in `/etc/profile.d` (if you want it to run for all users) or in `/home/$USER/.profile` (if for a single user) to make sure it is executed on login.
