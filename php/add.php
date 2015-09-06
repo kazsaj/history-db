@@ -2,7 +2,7 @@
 
 require_once('db.php');
 
-$command = isset($_POST['command']) ? $_POST['command'] : $argv[2];
+$command = isset($_POST['command']) ? $_POST['command'] : implode(" ", array_slice($argv, 2));
 $hostname = isset($_POST['hostname']) ? $_POST['hostname'] : $_SERVER['HOSTNAME'];
 $username = isset($_POST['username']) ? $_POST['username'] : isset($_SERVER['SUDO_USER']) ? $_SERVER['SUDO_USER'] : isset($_SERVER['USERNAME']) ? $_SERVER['USERNAME'] : $_SERVER['LOGNAME'];
 
